@@ -19,7 +19,7 @@ testdata = [
 
 
 @pytest.mark.parametrize("task_input,task_output", testdata)
-def test_case_c(monkeypatch, capsys, task_input, task_output):
+def test_case_d(monkeypatch, capsys, task_input, task_output):
 
     monkeypatch.setattr('sys.stdin', io.StringIO(task_input))
 
