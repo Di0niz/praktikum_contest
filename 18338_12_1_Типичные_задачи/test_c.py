@@ -3,6 +3,8 @@ import io
 import pytest
 import sys
 
+import c
+
 
 testdata = [
     (
@@ -20,16 +22,12 @@ testdata = [
 ]
 
 
-def test_runste():
-    print('12321')
-
-
 @pytest.mark.parametrize("task_input,task_output", testdata)
 def test_case_c(monkeypatch, capsys, task_input, task_output):
 
     monkeypatch.setattr('sys.stdin', io.StringIO(task_input))
 
-    import c
+    # тестируем функцию main и перехватывать не надо
     c.main()
 
     captured = capsys.readouterr()

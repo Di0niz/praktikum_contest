@@ -29,6 +29,6 @@ def test_case_c(monkeypatch, capsys, task_input, task_output):
     captured = capsys.readouterr()
     assert captured.out == task_output, task_input
 
-    # если код не в main, то нужно удалить 
+    # если код не в main, то нужно удалить модуль из кеша
     if 'd' in sys.modules:
         del sys.modules["d"]
