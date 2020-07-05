@@ -1,4 +1,8 @@
+from functools import reduce
+
+
 n = int(input())
+
 workers = (
     int(x) for x in input().split()
 )

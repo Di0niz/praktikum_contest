@@ -3,7 +3,7 @@ import io
 import pytest
 import sys
 
-import c
+import case_c
 
 
 testdata = [
@@ -34,7 +34,7 @@ def test_case_c(monkeypatch, capsys, task_input, task_output):
     monkeypatch.setattr('sys.stdin', io.StringIO(task_input))
 
     # тестируем функцию main и перехватывать не надо
-    c.main()
+    case_c.main()
 
     captured = capsys.readouterr()
     assert captured.out == task_output, task_input

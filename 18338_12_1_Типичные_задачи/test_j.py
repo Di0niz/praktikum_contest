@@ -6,29 +6,29 @@ import sys
 
 testdata = [
         (
-            "8\n"
-            "-1 0 0 1 2 -1 -4 0\n",
-            "-1 1 2 -1 -4\n"
+            "5\n"
+            "4 1 2 1 2\n",
+            "4\n"
         ),
         (
             "5\n"
-            "-1 1 2 -1 -4\n",
-            "-1 1 2 -1 -4\n"
+            "42 67 67 42 42\n",
+            "42\n"
         ),
     ]
 
 
 @pytest.mark.parametrize("task_input,task_output", testdata)
-def test_case_d(monkeypatch, capsys, task_input, task_output):
+def test_case_j(monkeypatch, capsys, task_input, task_output):
 
     monkeypatch.setattr('sys.stdin', io.StringIO(task_input))
 
     # модуль загружается один раз
-    import case_d
+    import case_j
 
     captured = capsys.readouterr()
     assert captured.out == task_output, task_input
 
     # если код не в main, то нужно удалить модуль из кеша
-    if 'case_d' in sys.modules:
-        del sys.modules["case_d"]
+    if 'case_j' in sys.modules:
+        del sys.modules["case_j"]
