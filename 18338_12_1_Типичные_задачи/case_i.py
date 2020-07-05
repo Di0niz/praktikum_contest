@@ -8,18 +8,21 @@ def main():
 
     for i in range(len(a)):
 
-        val = ord(a[-i-1]) - ord('0') + mind
+        # заменяем ord('1') на 1
+        # заменяем ord('0') на 0
+        val = (1 if a[-i-1] == '1' else 0) + mind
         if i < len(b):
-            val = val + ord(b[-i-1]) - ord('0')
+            val = val + (1 if b[-i-1] == '1' else 0)
 
-        result.append(chr((val & 1) + ord('0')))
+        result.append(val & 1)
         mind = val >> 1
 
     while(mind > 0):
-        result.append(chr((mind & 1) + ord('0')))
+        result.append(mind)
         mind = mind >> 1
 
-    print("".join(reversed(result)))
+    # заменяем ord('0') на 48
+    print("".join((chr(x + 48) for x in result[::-1])))
 
 
 if __name__ == "__main__":

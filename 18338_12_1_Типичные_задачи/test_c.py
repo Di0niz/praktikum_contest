@@ -1,40 +1,40 @@
-# # content of test_example.py
-# import io
-# import pytest
-# import sys
+# content of test_example.py
+import io
+import pytest
+import sys
 
-# import c
-
-
-# testdata = [
-#     (
-#         "4\n"
-#         "1 2 0 0\n"
-#         "34\n",
-#         "1 2 3 4\n"
-#     ),
-#     (
-#         "2\n"
-#         "9 5\n"
-#         "17\n",
-#         "1 1 2\n"
-#     ),
-#     (
-#         "3\n"
-#         "9 5 4\n"
-#         "17\n",
-#         "9 7 1\n"
-#     ),
-# ]
+import c
 
 
-# @pytest.mark.parametrize("task_input,task_output", testdata)
-# def test_case_c(monkeypatch, capsys, task_input, task_output):
+testdata = [
+    (
+        "4\n"
+        "1 2 0 0\n"
+        "34\n",
+        "1 2 3 4\n"
+    ),
+    (
+        "2\n"
+        "9 5\n"
+        "17\n",
+        "1 1 2\n"
+    ),
+    (
+        "3\n"
+        "9 5 4\n"
+        "17\n",
+        "9 7 1\n"
+    ),
+]
 
-#     monkeypatch.setattr('sys.stdin', io.StringIO(task_input))
 
-#     # тестируем функцию main и перехватывать не надо
-#     c.main()
+@pytest.mark.parametrize("task_input,task_output", testdata)
+def test_case_c(monkeypatch, capsys, task_input, task_output):
 
-#     captured = capsys.readouterr()
-#     assert captured.out == task_output, task_input
+    monkeypatch.setattr('sys.stdin', io.StringIO(task_input))
+
+    # тестируем функцию main и перехватывать не надо
+    c.main()
+
+    captured = capsys.readouterr()
+    assert captured.out == task_output, task_input
