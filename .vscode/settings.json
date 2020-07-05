@@ -1,0 +1,15 @@
+{
+    "python.envFile": "~/.venv/contests",
+    "python.venvPath": "~/.venv",
+    "python.venvFolders": [
+        "~/.venv/contests"
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.pythonPath": "~/.venv/contests/bin",
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.enabled": true,
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.linting.pylintEnabled": false,
+}
