@@ -16,14 +16,15 @@ import sys
             "тяжелая атлетика\n"
             "таракановедение\n"
             "таракановедение\n",
-
             "вышивание крестиком\n"
             "рисование мелками на парте\n"
             "настольный керлинг\n"
             "кухня африканского племени ужасмай\n"
             "тяжелая атлетика\n"
             "таракановедение"
-        ), ])
+        ),
+        ]
+    )
 def test_case(capsys, monkeypatch, task_input, task_output):
     monkeypatch.setattr('sys.stdin', io.StringIO(task_input))
 
