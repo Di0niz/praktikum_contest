@@ -18,7 +18,7 @@ def main():
 
     print(len(candidates))
     for cand in candidates:
-        print("%d %d" % (cand[0], cand[1]))
+        print("%g %g" % (cand[0], cand[1]))
 
 
 if __name__ == "__main__":
