@@ -1,10 +1,15 @@
+k = 4
+n = 7
+L = [4, 3, 2, 3, 5, 2, 1]
+# k = 2
+# n = 7
+# L = [2, 3, 1, 3, 5, 2, 1]
+
 
 def solution(k, fund):
-
     if k > 0:
         if sum(fund) % k != 0:
             return False
-
         amount = sum(fund) // k
         while amount:
             # ищем минмак элементы
@@ -20,25 +25,12 @@ def solution(k, fund):
             else:
                 # если не удалось вставить самый маленький
                 break
-
         if amount != 0:
             return False
-
         return solution(k-1, fund)
     elif k == 0 and fund == []:
         return True
-
     return False
 
 
-def main():
-
-    with open('input.txt', 'r') as f:
-        k = int(f.readline())
-        n = int(f.readline())
-        fund = [int(x) for x in f.readline().split()]
-        print(solution(k, fund))
-
-
-if __name__ == "__main__":
-    main()
+print(solution(k, L))
