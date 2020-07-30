@@ -8,7 +8,6 @@ def main():
     ]
 
     items = sorted(items, key=lambda v: (-v[0], v[1], v[2]))
-price_density.sort(key=lambda v: (-v[0], v[1], v[2]))
 
     result = []
 

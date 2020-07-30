@@ -12,4 +12,7 @@
         "."
     ],
     "python.linting.pylintEnabled": false,
+    "files.exclude": {
+        "**/.pytest_cache": true
+    },
 }

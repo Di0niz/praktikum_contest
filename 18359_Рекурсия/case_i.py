@@ -1,17 +1,21 @@
-k = 4
+k = 2
 n = 7
-L = [4, 3, 2, 3, 5, 2, 1]
+L = [10, 7, 5, 4, 3, 1]
 # k = 2
 # n = 7
 # L = [2, 3, 1, 3, 5, 2, 1]
 
 
 def solution(k, fund):
+
+    print(k, fund)
     if k > 0:
         if sum(fund) % k != 0:
             return False
         amount = sum(fund) // k
         while amount:
+            print(fund)
+
             # ищем минмак элементы
             max_val = max(fund)
             min_val = min(fund)
@@ -25,6 +29,8 @@ def solution(k, fund):
             else:
                 # если не удалось вставить самый маленький
                 break
+
+            print(fund)
         if amount != 0:
             return False
         return solution(k-1, fund)

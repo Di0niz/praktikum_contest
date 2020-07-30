@@ -11,9 +11,9 @@ def is_slice(arr, n):
         if arr[j] <= target:
             target -= arr[j]
             j -= 1
-        elif arr[i] <= target:
-            target -= arr[i]
-            i += 1
+        # elif arr[i] <= target:
+        #     target -= arr[i]
+        #     i += 1
         # если не получилось пройти вперед
         # выкидываем предыдущий большой элемент
         elif j < n - 1:
